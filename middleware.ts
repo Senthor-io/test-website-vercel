@@ -40,15 +40,16 @@ export default async function senthor(request) {
         });
 
         if (apiResponse.status === 402) {
-            const response = new Response(apiResponse.body, {
-                status: apiResponse.status,
-                headers: {},
-            });
-            console.error(Object.entries(apiResponse.headers));
+            const headers = new Headers();
             Object.entries(apiResponse.headers).forEach(([key, value]) => {
                 if (key.toLowerCase().startsWith('crawler-')) {
-                    response.headers.set(key, value);
+                    headers.set(key, value);
                 }
+            });
+
+            const response = new Response(apiResponse.body, {
+                status: apiResponse.status,
+                headers: headers,
             });
             return response;
         }
