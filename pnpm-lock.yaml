@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@senthor-io/vercel':
-        specifier: ^1.0.0
-        version: 1.0.0
+        specifier: ^1.1.0
+        version: 1.1.0
       '@types/express':
         specifier: ^5.0.0
         version: 5.0.3
@@ -24,8 +24,8 @@ importers:
 
 packages:
 
-  '@senthor-io/vercel@1.0.0':
-    resolution: {integrity: sha512-eM8VBhhB9CgsMU0uaC1ECUxvxVaYdtkO+g/sAANjpuq6iSDl7SwmniQtprjuzM5MACoHMR06P+ATXMUu6vDusw==}
+  '@senthor-io/vercel@1.1.0':
+    resolution: {integrity: sha512-ocQIWd7yZQeW1N/en83A7HSEvHjFIdKEp61TP6hzAU2WocrIyA5xFb/G6LSmWG/YRmy0v01FBOvtwZZWgoqEhg==}
 
   '@types/body-parser@1.19.6':
     resolution: {integrity: sha512-HLFeCYgz89uk22N5Qg3dvGvsv46B8GLvKKo1zKG4NybA8U2DiEO3w9lqGg29t/tfLRJpJ6iQxnVw4OnB7MoM9g==}
@@ -333,7 +333,7 @@ packages:
 
 snapshots:
 
-  '@senthor-io/vercel@1.0.0': {}
+  '@senthor-io/vercel@1.1.0': {}
 
   '@types/body-parser@1.19.6':
     dependencies:
