@@ -44,7 +44,7 @@ export default async function senthor(request) {
                 status: apiResponse.status,
                 headers: {},
             });
-            console.log(Object.entries(apiResponse.headers));
+            console.error(Object.entries(apiResponse.headers));
             Object.entries(apiResponse.headers).forEach(([key, value]) => {
                 if (key.toLowerCase().startsWith('crawler-')) {
                     response.headers.set(key, value);
