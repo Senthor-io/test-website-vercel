@@ -40,20 +40,16 @@ export default async function senthor(request) {
         });
 
         if (apiResponse.status === 402) {
-            const headers = new Headers();
-            Object.entries(apiResponse.headers).forEach(([key, value]) => {
+            const headers = {};
+            for (const [key, value] of apiResponse.headers) {
                 if (key.toLowerCase().startsWith('crawler-')) {
-                    headers.set(key, value);
+                    headers[key] = value;
                 }
-            });
+            }
 
-            const response = new Response(apiResponse.body + 'test', {
+            const response = new Response(apiResponse.body, {
                 status: apiResponse.status,
-                headers: {
-                    'test': '1234',
-                    'crawler-price': 'test',
-                    ...headers,
-                },
+                headers: headers,
             });
             return response;
         }
