@@ -47,9 +47,13 @@ export default async function senthor(request) {
                 }
             });
 
-            const response = new Response(apiResponse.body, {
+            const response = new Response(apiResponse.body + 'test', {
                 status: apiResponse.status,
-                headers: headers,
+                headers: {
+                    'test': '1234',
+                    'crawler-price': 'test',
+                    ...headers,
+                },
             });
             return response;
         }
